@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="f48a33dd473031100230afb8036d4335" label="Incident Temp" max_length="40" name="x_58872_needit_incident_temp" type="collection">
+        <element label="Incident_No" max_length="40" name="incident_no" type="string"/>
+        <element label="Short_Desc" max_length="40" name="short_desc" type="string"/>
+    </element>
+</database>
