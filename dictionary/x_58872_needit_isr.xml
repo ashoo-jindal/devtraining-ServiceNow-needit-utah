@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="22f7c5d5477531100230afb8036d43f1" label="Iotasol Service Request - AJ" max_length="40" name="x_58872_needit_isr" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="3" label="Priority" max_length="40" name="priority" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="1 - High" value="1"/>
+                <element inactive_on_update="false" label="2 - Medium" value="2"/>
+                <element inactive_on_update="false" label="3 - Low" value="3"/>
+            </choice>
+        </element>
+        <element choice="3" default="hardware" label="Request Type" max_length="40" name="request_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Hardware Issue" value="hardware"/>
+                <element inactive_on_update="false" label="Software Installation" value="software"/>
+            </choice>
+        </element>
+        <element label="Short Desc" max_length="250" name="short_desc" type="string"/>
+        <element choice="1" default="open" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Approved" value="appr"/>
+                <element inactive_on_update="false" label="Open" value="open"/>
+            </choice>
+        </element>
+    </element>
+</database>

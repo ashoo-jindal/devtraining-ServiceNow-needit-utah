@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    /* widget controller */
+    var c = this;
+
+
+    //c.server.update();
+    c.getData = function() {
+        document.getElementById("weather-info").style.display = "none" 
+			
+        if (c.data.cityName == undefined) {
+            alert('Invalid city');
+        }
+
+        c.server.get({
+            action: "getinfo",
+            loc: c.data.cityName
+        }).then(function(resp) {
+            c.data.result = JSON.parse(resp.data.response);
+            console.log(c.data.result);
+            displayData(c.data.result);
+        })
+
+    }
+
+
+    displayData = function(myData) {
+       // alert(myData.cod);
+
+        if (myData.cod != '404') {
+            document.getElementById("weather-info").style.display = "flex" 
+            temp = myData.main;
+            c.data.currentTemp = Math.round(temp.temp * 10) / 100;
+            c.data.minTemp = Math.round(temp.temp_min * 10) / 100;
+            c.data.maxTemp = Math.round(temp.temp_max * 10) / 100;
+
+            rain = myData.weather[0];
+            c.data.rainStatus = rain.description.toUpperCase();
+            c.data.windSpeed = myData.wind.speed;
+
+        } else {
+					alert('Invalid Data');
+				}
+    }
+
+
+
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*body {
+    font-family: "Poppins", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #609cfc;
+}*/
+
+h1{
+    font-weight: bolder;
+    margin-top: 20px;
+    color: #609cfc;
+}
+span{
+    color: #B202FE;
+}
+
+
+.container{
+    //margin-top: 100px;
+    font-family: "Poppins", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+    height: 320px;
+    background-color: whitesmoke;
+    border-radius: 50px;
+    box-shadow: #609cfc 5px 5px 10px;
+}
+svg{
+    width: 50px;
+    padding: 5px 5px;
+    fill: #B202FE;
+    background-color: #609cfc;
+    border-radius: 15px 0px 0px 15px;
+    display: flex;
+    align-self: center;
+}
+
+.search-container{
+    margin-top: 20px;
+    display: flex;
+    padding: 10px 0px;
+}
+
+input{
+    font-size: 1.7rem;
+    padding: 10px 5px;
+    color: #609cfc;
+    background-color: whitesmoke;
+    border: 3px #609cfc solid;
+    border-radius: 0px 15px 15px 0px;
+}
+
+
+#weather-info{
+    margin-top: 30px;
+    display: none;
+    width: 100%;
+    justify-content: space-evenly;
+    animation: fade-in 0.5s forwards;
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: translateY(-30px);
+    }100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
+
+.info-block{
+    margin-left: 8px;
+    text-align: center;
+    width: 110px;
+    box-shadow: 0px 0px 10px 2px rgb(211, 211, 211);
+    border-radius: 15px;
+}
+
+
+.info-header{
+    color: #B202FE;
+}
+
+.sub-info-header{
+    color: #609cfc;
+}
+
+.min-max{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#rain-description, #windspeed-info{
+    margin-top: 15px;
+}
+
+
+.getinfo {
+background-color : #609cfc;
+color: white;
+padding: 12px 10px;
+border-radius: 10px;
+border-color: #46b8da;
+}
+
+#mybutton {
+padding: 0px 5px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>my_weather_aj</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>My Weather AJ</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* populate the 'data' object */
+    /* e.g., data.table = $sp.getValue('table'); */
+
+    data.response = "";
+
+    if (input != undefined && input.action == 'getinfo') {
+       // gs.addInfoMessage(input.loc);
+
+        try {
+            var r = new sn_ws.RESTMessageV2('x_58872_needit.Open Weather Info - AJ', 'Default GET');
+            r.setStringParameterNoEscape('API_key', '85393303033c2196f95c435d5940fe86');
+            r.setStringParameterNoEscape('City_Name', input.loc);
+            var response = r.execute();
+            var responseBody = response.getBody();
+            var httpStatus = response.getStatusCode();
+            data.response = responseBody;
+            //		 data.response = responseBody;	 
+        } catch (ex) {
+            var message = ex.message;
+        }
+
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-11 04:36:58</sys_created_on>
+        <sys_id>26998ab5473131100230afb8036d43d2</sys_id>
+        <sys_mod_count>144</sys_mod_count>
+        <sys_name>My Weather AJ</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_26998ab5473131100230afb8036d43d2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-12 05:32:12</sys_updated_on>
+        <template><![CDATA[<div class="container">
+      <h1>Dynamic <span>Weather</span></h1>
+
+      <div class="search-container">
+        <i><svg class="svg-icon" viewBox="0 0 20 20">
+            <path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+           </svg>
+        </i>
+        <input id="city-input" type="text" placeholder="Enter city name" ng-model="c.data.cityName" ng-keyup="$event.keyCode == 13 ? c.getData() : null"/>
+        <div id="mybutton">
+	        <button type="submit" class="getinfo" ng-click="c.getData()">Submit</button>
+        </div>        
+      </div>
+
+      <div id="weather-info">
+        <div class="temperature-info info-block">
+          <h3 class="info-header">Temp.</h3>
+          <p class="sub-info-header">Now</p>
+          <p id="current-temperature">{{c.data.currentTemp}}°C</p>
+
+          <!--<div class="min-max">
+            <div class="min">
+              <p class="sub-info-header">Min</p>
+              <p id="min-temperature">{{c.data.minTemp}}°C</p>
+            </div>
+            <div class="max">
+              <p class="sub-info-header">Max</p>
+              <p id="max-temperature">{{c.data.maxTemp}}°C</p>
+            </div>
+          </div>
+          --> 
+        </div>
+
+        <div class="rain-info info-block">
+          <h3 class="info-header">Rain</h3>
+          <p id="rain-description">{{c.data.rainStatus}}</p>
+        </div>
+
+        <div class="wind-info info-block">
+          <h3 class="info-header">Wind</h3>
+          <p id="windspeed-info">{{c.data.windSpeed}} km/h</p>
+        </div>
+
+        <!-- <p>Today the weather looks sunny</p> -->
+      </div>
+    </div>
+]]></template>
+    </sp_widget>
+</record_update>
