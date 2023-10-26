@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	
+	var message ='';
+	var date = new Date(); //get the current date.
+	var hours = date.getHours(); //get the current hour	
+	var time = date.getTime() //get the current time	
+	
+	// calculations based on hour to get the correct greeting
+	if(hours > 4 && hours <= 12) {
+			message = message+ 'Good Morning';
+	} else if(hours > 12 && hours <= 16) {
+			message = message+ 'Good Afternoon';
+	} else if(hours > 16 && hours <= 20) {
+			message = message+ 'Good Evening';
+	} else if(hours > 20 || hours <= 4) {
+			message = message+ 'Good Night';
+	}	
+	
+  c.data.greet = message; 
+	c.data.date = date;
+	c.data.time = time;	
+	
+	var quote = '';
+	var res = JSON.parse(c.data.response);
+	//debugger;
+  var length = res.length;
+  var random = Math.floor(Math.random() * length); 
+  c.data.quote = res[random].q;
+	c.data.auther = res[random].a;
+	console.log(res);
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.greet {
+  font-family: "Poppins", system-ui;
+  //background: #609cfc;
+  color: #F0F8FF;
+  text-align: center;
+  margin: 10px
+}
+
+.qt {
+  color: yellow;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Greet the user and give daily random quote.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>greetings_aj</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Greetings - AJ</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+  data.user = gs.getUserDisplayName(); 
+	
+	try { 
+	 var r = new sn_ws.RESTMessageV2('x_58872_needit.Daily Quotes', 'Default GET');
+	 var response = r.execute();
+	 var responseBody = response.getBody();
+	 var httpStatus = response.getStatusCode();
+	 data.response = responseBody	
+	}
+  catch(ex) {
+	 var message = ex.message;
+	}	
+	
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-13 05:51:23</sys_created_on>
+        <sys_id>229d6c62477131100230afb8036d43e6</sys_id>
+        <sys_mod_count>52</sys_mod_count>
+        <sys_name>Greetings - AJ</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_229d6c62477131100230afb8036d43e6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-13 08:28:19</sys_updated_on>
+        <template><![CDATA[<div class="greet">
+<!-- your widget template -->
+  <h2>]]>👋<![CDATA[ Hello {{data.user}}!</h2>
+  <h1><b>{{data.greet}}</b></h1>
+  <h4>Today's Date is: {{data.date | date:'fullDate'}}</h4>  
+  <h3 class="hidden">Time is: <b>{{data.time | date:'shortTime'}}</b></h3>
+  <h4 class="qt">{{c.data.quote}} - <i>{{c.data.auther}}</i></h4>  
+</div>]]></template>
+    </sp_widget>
+</record_update>

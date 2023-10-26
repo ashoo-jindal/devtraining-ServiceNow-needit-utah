@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Iotasol Landing - AJ - Container 1</name>
+        <order>1</order>
+        <sp_page display_value="iotasol_landing_aj">21a2693f47f9b1100230afb8036d4364</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-17 06:56:54</sys_created_on>
+        <sys_id>fa236d3f47f9b1100230afb8036d4330</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Iotasol Landing - AJ - Container 1</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_container_fa236d3f47f9b1100230afb8036d4330</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-17 06:56:54</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>284de22fdbed6d1cdc3fc597059619f7</instance_id>
+        <instance_name>dev166132</instance_name>
+        <name>sp_container_fa236d3f47f9b1100230afb8036d4330</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Iotasol Landing - AJ - Container 1</name><order>1</order><sp_page display_value="iotasol_landing_aj">21a2693f47f9b1100230afb8036d4364</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-10-17 06:56:54</sys_created_on><sys_id>fa236d3f47f9b1100230afb8036d4330</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Iotasol Landing - AJ - Container 1</sys_name><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>sp_container_fa236d3f47f9b1100230afb8036d4330</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-10-17 06:56:54</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-1551197716</payload_hash>
+        <record_name>Iotasol Landing - AJ - Container 1</record_name>
+        <reverted_from/>
+        <source>23a80940470131100230afb8036d4353</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-17 06:56:54</sys_created_on>
+        <sys_id>f6236d3f47f9b1100230afb8036d4332</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18b3c6c53fc0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-17 06:56:54</sys_updated_on>
+        <type>Container</type>
+        <update_guid>3e236d3f55f9b110f869dc32f7cf1131</update_guid>
+        <update_guid_history>3e236d3f55f9b110f869dc32f7cf1131:-1551197716</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Iotasol Landing - AJ - Container 1">d4332d3f47f9b1100230afb8036d43dd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-17 06:57:00</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>3221dca0eef84a5f95c4e733780340b9</sys_id>
+        <sys_metadata>fa236d3f47f9b1100230afb8036d4330</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Iotasol Landing - AJ - Container 1</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sp_container_fa236d3f47f9b1100230afb8036d4330</sys_update_name>
+        <sys_update_version display_value="sp_container_fa236d3f47f9b1100230afb8036d4330">f6236d3f47f9b1100230afb8036d4332</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-17 06:57:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

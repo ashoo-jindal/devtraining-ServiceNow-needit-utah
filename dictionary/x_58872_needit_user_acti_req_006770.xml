@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="512116bf47bdb1100230afb8036d4393" extends="user_activation_request" label="Needit User Acti Req 006770" max_length="40" name="x_58872_needit_user_acti_req_006770" type="collection"/>
+</database>

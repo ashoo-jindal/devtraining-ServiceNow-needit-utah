@@ -8,6 +8,7 @@
                 <element inactive_on_update="false" label="3 - Low" value="3"/>
             </choice>
         </element>
+        <element label="Requested For" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
         <element choice="3" default="hardware" label="Request Type" max_length="40" name="request_type" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Hardware Issue" value="hardware"/>
@@ -21,5 +22,8 @@
                 <element inactive_on_update="false" label="Open" value="open"/>
             </choice>
         </element>
+        <index name="index">
+            <element name="requested_for"/>
+        </index>
     </element>
 </database>

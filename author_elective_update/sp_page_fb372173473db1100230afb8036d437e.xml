@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>other</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>iotasol_login_aj</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>true</public>
+        <roles/>
+        <seo_script/>
+        <short_description>Login page for Iotasol</short_description>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-17 07:14:44</sys_created_on>
+        <sys_id>fb372173473db1100230afb8036d437e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>iotasol_login_aj</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_page_fb372173473db1100230afb8036d437e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-17 07:15:29</sys_updated_on>
+        <title>Iotasol Login - AJ</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=fb372173473db1100230afb8036d437e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>284de22fdbed6d1cdc3fc597059619f7</instance_id>
+        <instance_name>dev166132</instance_name>
+        <name>sp_page_fb372173473db1100230afb8036d437e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>other</category><css/><draft>false</draft><dynamic_title_structure/><human_readable_url_structure/><id>iotasol_login_aj</id><internal>false</internal><omit_watcher>false</omit_watcher><public>true</public><roles/><seo_script/><short_description>Login page for Iotasol</short_description><sys_class_name>sp_page</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-10-17 07:14:44</sys_created_on><sys_id>fb372173473db1100230afb8036d437e</sys_id><sys_mod_count>1</sys_mod_count><sys_name>iotasol_login_aj</sys_name><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>sp_page_fb372173473db1100230afb8036d437e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-10-17 07:15:29</sys_updated_on><title>Iotasol Login - AJ</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=fb372173473db1100230afb8036d437e"/></record_update>]]></payload>
+        <payload_hash>-1008088342</payload_hash>
+        <record_name>iotasol_login_aj</record_name>
+        <reverted_from/>
+        <source>23a80940470131100230afb8036d4353</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-17 07:15:29</sys_created_on>
+        <sys_id>8f672573473db1100230afb8036d4376</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18b3c7d59880000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-17 07:15:29</sys_updated_on>
+        <type>Page</type>
+        <update_guid>476725735e3db11053cfb454dac0bc76</update_guid>
+        <update_guid_history>476725735e3db11053cfb454dac0bc76:-1008088342,80472173ce3db110c760cabea9535a80:-159262860</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="iotasol_login_aj">6732b13f473db1100230afb8036d4361</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-10-17 08:02:46</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>abff07114dfa438482520e591ff08844</sys_id>
+        <sys_metadata>fb372173473db1100230afb8036d437e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>iotasol_login_aj</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sp_page_fb372173473db1100230afb8036d437e</sys_update_name>
+        <sys_update_version display_value="sp_page_fb372173473db1100230afb8036d437e">8f672573473db1100230afb8036d4376</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-10-17 08:02:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

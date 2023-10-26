@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="cd21da7f47bdb1100230afb8036d4387" extends="sys_user_registration_request" label="Needit User Reg Req 006770" max_length="40" name="x_58872_needit_user_reg_req_006770" type="collection"/>
+</database>

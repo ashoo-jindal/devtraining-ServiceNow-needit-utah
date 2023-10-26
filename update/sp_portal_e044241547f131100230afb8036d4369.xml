@@ -20,7 +20,6 @@ $link-color:#1F8476;&#13;
 $sp-logo-margin-x:15px;&#13;
 $btn-default-bg:#fff;&#13;
 $text-muted:#666666;&#13;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap');&#13;
 </css_variables>
         <dark_theme/>
         <default>false</default>
@@ -30,34 +29,35 @@ $text-muted:#666666;&#13;
         <homepage display_value="homepage_iotasol_sp">0ad5201547f131100230afb8036d435c</homepage>
         <icon>dcc6241547f131100230afb8036d436f</icon>
         <kb_knowledge_base/>
-        <kb_knowledge_page/>
-        <login_page/>
+        <kb_knowledge_page display_value="kb_view2">26c2e030d7201200a9addd173e24d437</kb_knowledge_page>
+        <login_page display_value="iotasol_landing_v1_aj">14bce977473db1100230afb8036d430f</login_page>
         <logo>7f56601547f131100230afb8036d4378</logo>
         <notfound_page display_value="404">3c2c9063cb11020000f8d856634c9c1f</notfound_page>
         <quick_start_config/>
         <sc_catalog/>
         <sc_catalog_page/>
         <sc_category_page/>
-        <search_application/>
-        <search_results_configuration/>
+        <search_application display_value="Service Portal Default Search Application">00731b9d5b231010d9a5ce1a8581c7dd</search_application>
+        <search_results_configuration display_value="Service Portal Search">80eb579d53671010968addeeff7b1215</search_results_configuration>
         <sp_chat_queue/>
         <sp_rectangle_menu display_value="SP Header Menu">d150fd31cb10020000f8d856634c9ce6</sp_rectangle_menu>
         <sys_class_name>sp_portal</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-10-09 08:10:24</sys_created_on>
         <sys_id>e044241547f131100230afb8036d4369</sys_id>
-        <sys_mod_count>14</sys_mod_count>
-        <sys_name>Iotasol Demo Portal</sys_name>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Iotasol Demo Portal - AJ</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sp_portal_e044241547f131100230afb8036d4369</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-10-11 05:17:26</sys_updated_on>
+        <sys_updated_on>2023-10-17 11:21:10</sys_updated_on>
         <theme display_value="La Jolla">a7a6e78277002300a6e592718a10617a</theme>
-        <title>Iotasol Demo Portal</title>
+        <title>Iotasol Demo Portal - AJ</title>
         <ts_index_group/>
         <url_suffix>iot</url_suffix>
+        <user_registration_config display_value="Iotasol User Registration">ee0192bf47bdb1100230afb8036d43de</user_registration_config>
     </sp_portal>
     <sys_translated_text action="delete_multiple" query="documentkey=e044241547f131100230afb8036d4369"/>
     <sys_attachment action="INSERT_OR_UPDATE">
