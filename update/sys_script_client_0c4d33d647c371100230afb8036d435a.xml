@@ -3,41 +3,51 @@
         <active>false</active>
         <applies_extended>false</applies_extended>
         <condition/>
-        <description/>
+        <description>Hide subcateg in case of Inquiry/Help</description>
         <field>category</field>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Test Glide Modal - AJ</name>
+        <name>Incident_Hide_Show_SubCateg_AJ</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-    if (isLoading || newValue === '') {
+    if (newValue === '') {
         return;
     }
 
+    var mandatoryField = g_form.getControl('subcategory');
+    var isMandatory = g_form.isMandatory('subcategory');
 
-    var gm = new GlideModal("glide_ask_standard", false, 600); // Create a new GlideModal instance
-    gm.setTitle("Confirm Closure"); // Set the modal title
-    gm.setPreference("title", "Are you sure you want to change category?"); // Set the message
-	gm.setPreference("onPromptComplete", function() {alert("You clicked on 'Ok'");});
-    gm.render(); // Render the modal   
+    if (newValue == 'inquiry') {
+        if (isMandatory) {
+            // mandatoryField.setAttribute('style', 'display:none');
+            g_form.setMandatory('subcategory', false);
+        }
+        g_form.setDisplay('subcategory', false);
+    } else {
+        if (!isMandatory) {
+            //  mandatoryField.setAttribute('style', 'display:block');
+            g_form.setMandatory('subcategory', false);
+        }
+        g_form.setDisplay('subcategory', true);
+    }
 
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-10-09 17:40:00</sys_created_on>
+        <sys_created_on>2023-12-14 05:42:07</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>4549e6d147f931100230afb8036d4345</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Test Glide Modal - AJ</sys_name>
+        <sys_id>0c4d33d647c371100230afb8036d435a</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Incident_Hide_Show_SubCateg_AJ</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_script_client_4549e6d147f931100230afb8036d4345</sys_update_name>
+        <sys_update_name>sys_script_client_0c4d33d647c371100230afb8036d435a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-12-22 11:13:56</sys_updated_on>
+        <sys_updated_on>2023-12-14 06:52:57</sys_updated_on>
         <table>incident</table>
         <type>onChange</type>
         <ui_type>10</ui_type>
