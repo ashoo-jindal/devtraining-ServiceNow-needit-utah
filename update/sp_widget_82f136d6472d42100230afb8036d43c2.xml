@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	
+	function onReset() {
+		document.getElementById("f_id").reset(); // clear the form
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>test_form_needit</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Test Form NeedIt</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	// function redirect(){
+	
+	var User_id;
+	var sd_id;
+	var des_id;
+	var cat_id;
+	var inc = new GlideRecord('incident');
+	inc.initialize();
+	inc.caller_id = User_id;
+	inc.short_description = sd_id;
+	inc.description = des_id;
+	inc.category = cat_id;
+	var save = inc.insert();
+	if (save) {
+			var sysID = inc.getUniqueValue();
+			var URL = "https://dev166132.service-now.com/incident.do?sys_id=" + sysID; // URL of newly created incident record
+			response.sendRedirect(URL); //sendRedirect() method redirects the response to another resource, inside or outside the server.
+	} else {
+			gs.addInfoMessage(User_id + sd_id + des_id + cat_id);
+			gs.addErrorMessage('Record not inserted.');
+	}
+	// }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 06:45:45</sys_created_on>
+        <sys_id>82f136d6472d42100230afb8036d43c2</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Test Form NeedIt</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_82f136d6472d42100230afb8036d43c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 06:48:46</sys_updated_on>
+        <template><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:ui_form id="f_id">
+	<center><h2> Incident Request Form </h2>
+	<table>
+	<tr>
+	<td>Requester : </td>
+    <td><g:ui_reference name="User_id" table="sys_user" field="name" id="Name"  displayvalue="${gs.getUser().getDisplayName()}" value="${gs.getUserID()	}"/> </td>
+	
+    </tr>
+		<tr></tr>	
+	<tr>
+	<td>Category : </td>
+    <td> <select name="cat_id" id="c_id">
+		<option value="">None</option>
+		<option value="inquiry">inquiry</option> 
+		<option value="software">software</option>
+		<option value="hardware">hardware</option>
+		<option value="network">network</option> 
+		<option value="database">database</option> 
+		</select>
+	</td>
+	</tr>
+		<tr><td>Short Description : </td><td><input type="text" name="sd_id"/></td></tr>
+		<tr><td>Description : </td><td><textarea name="des_id" rows="4" cols="50"></textarea></td></tr>
+		<tr><td><input type="submit" onClick="redirect()"/></td><td><input type="reset" name="reset" onClick="onReset()"/></td></tr>
+	</table>
+		
+		</center>
+		 </g:ui_form>
+</j:jelly>]]></template>
+    </sp_widget>
+</record_update>
